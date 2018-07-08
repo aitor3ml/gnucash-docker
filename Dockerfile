@@ -11,9 +11,8 @@ ENV LC_ALL es_ES.UTF-8
 RUN apt-get update && apt-get install -y locales \
 	&& sed -i -e 's/# es_ES.UTF-8 UTF-8/es_ES.UTF-8 UTF-8/' /etc/locale.gen && locale-gen && \
 	dpkg-reconfigure --frontend=noninteractive locales && \
-	update-locale LANG=es_ES.UTF-8 && apt-get clean
-
-RUN apt-get -y install git x11-apps \
+	update-locale LANG=es_ES.UTF-8 \
+	&& apt-get -y install git \
 	&& git clone --single-branch -b 3.2 https://github.com/GnuCash/gnucash /tmp/gnucash.git \
 	&& cd /tmp/gnucash.git \
 	&& apt-get -y install cmake build-essential \
@@ -28,7 +27,6 @@ RUN apt-get -y install git x11-apps \
 		ofx aqbanking-tools \
 	&& cmake -D CMAKE_INSTALL_PREFIX=/gnucash /tmp/gnucash.git \
 	&& cd /tmp/gnucash.git && make && make install && cd / \
-	\
 	&& apt-get -y --purge remove git cmake build-essential \
 		pkg-config libgtk2.0-dev libxslt1-dev libxml2-dev libwebkit2gtk-4.0-dev \
                 swig3.0 guile-2.2-dev libgwenhywfar-core-dev \
@@ -37,6 +35,8 @@ RUN apt-get -y install git x11-apps \
                 libdbi-dev libdbd-mysql libdbd-pgsql libdbd-sqlite libdbd-sqlite3 \
                 libboost-dev libboost-date-time-dev libboost-regex-dev libboost-locale-dev libboost-filesystem-dev libboost-system-dev \
                 libsecret-1-dev \
+	&& apt-get -y install guile-2.2 libgtk-3-0 libwebkit2gtk-4.0-37 libboost-locale1.62.0 libboost-filesystem1.62.0 libboost-date-time1.62.0 libboost-regex1.62.0 \
+		libdbd-mysql libdbd-pgsql libdbd-sqlite libdbd-sqlite3 \
 	&& apt-get -y autoremove && apt-get clean \
 	&& rm -r /tmp/gnucash.git
 
