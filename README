@@ -1,4 +1,4 @@
 # build
-docker build -t aitor3ml/gnucash .
+docker build -t aitor3ml/gnucash-docker .
 # run
-docker run -e DISPLAY=unix$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix aitor3ml/gnucash
+docker run -e DISPLAY=unix$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix aitor3ml/gnucash-docker
