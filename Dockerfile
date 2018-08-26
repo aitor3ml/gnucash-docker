@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y locales \
 	&& apt-get -y install pkg-config libgtk2.0-dev libxslt1-dev libxml2-dev libwebkit2gtk-4.0-dev \
 		swig3.0 guile-2.2-dev libgwenhywfar-core-dev \
 		libaqbanking-dev libgwengui-gtk3-dev libofx-dev \
-		xsltproc libxorg-gtest-dev libgmock-dev \
+		xsltproc libgmock-dev \
 		libdbi-dev libdbd-mysql libdbd-pgsql libdbd-sqlite libdbd-sqlite3 \
 		libboost-dev libboost-date-time-dev libboost-regex-dev libboost-locale-dev libboost-filesystem-dev libboost-system-dev \
 		libsecret-1-dev \
@@ -31,7 +31,7 @@ RUN apt-get update && apt-get install -y locales \
 		pkg-config libgtk2.0-dev libxslt1-dev libxml2-dev libwebkit2gtk-4.0-dev \
                 swig3.0 guile-2.2-dev libgwenhywfar-core-dev \
                 libaqbanking-dev libgwengui-gtk3-dev libofx-dev \
-                xsltproc libxorg-gtest-dev libgmock-dev \
+                xsltproc libgmock-dev \
                 libdbi-dev libdbd-mysql libdbd-pgsql libdbd-sqlite libdbd-sqlite3 \
                 libboost-dev libboost-date-time-dev libboost-regex-dev libboost-locale-dev libboost-filesystem-dev libboost-system-dev \
                 libsecret-1-dev \
