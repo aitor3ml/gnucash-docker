@@ -36,7 +36,7 @@ RUN apt-get update && apt-get install -y locales \
                 libboost-dev libboost-date-time-dev libboost-regex-dev libboost-locale-dev libboost-filesystem-dev libboost-system-dev \
                 libsecret-1-dev \
 	&& apt-get -y install guile-2.2 libgtk-3-0 libwebkit2gtk-4.0-37 libboost-locale1.62.0 libboost-filesystem1.62.0 libboost-date-time1.62.0 libboost-regex1.62.0 \
-		libdbd-mysql libdbd-pgsql libdbd-sqlite libdbd-sqlite3 \
+		libdbd-mysql libdbd-pgsql libdbd-sqlite libdbd-sqlite3 dbus-x11 \
 	&& apt-get -y autoremove && apt-get clean \
 	&& rm -r /tmp/gnucash.git
 
