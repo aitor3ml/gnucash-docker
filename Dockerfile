@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y locales \
 	dpkg-reconfigure --frontend=noninteractive locales && \
 	update-locale LANG=es_ES.UTF-8 \
 	&& apt-get -y install git \
-	&& git clone --single-branch -b 3.3 https://github.com/GnuCash/gnucash /tmp/gnucash.git \
+	&& git clone --single-branch -b 3.6 https://github.com/GnuCash/gnucash /tmp/gnucash.git \
 	&& cd /tmp/gnucash.git \
 	&& apt-get -y install cmake build-essential \
 	&& apt-get -y install pkg-config libgtk2.0-dev libxslt1-dev libxml2-dev libwebkit2gtk-4.0-dev \
