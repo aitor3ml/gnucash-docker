@@ -8,12 +8,15 @@ ENV DISPLAY :0
 ENV LANG es_ES.UTF-8
 ENV LANGUAGE es_ES:es
 ENV LC_ALL es_ES.UTF-8
+
+ENV GNUCASH_VERSION 3.3
+
 RUN apt-get update && apt-get install -y locales \
 	&& sed -i -e 's/# es_ES.UTF-8 UTF-8/es_ES.UTF-8 UTF-8/' /etc/locale.gen && locale-gen && \
 	dpkg-reconfigure --frontend=noninteractive locales && \
 	update-locale LANG=es_ES.UTF-8 \
 	&& apt-get -y install git \
-	&& git clone --single-branch -b 3.3 https://github.com/GnuCash/gnucash /tmp/gnucash.git \
+	&& git clone --single-branch -b $GNUCASH_VERSION https://github.com/GnuCash/gnucash /tmp/gnucash.git \
 	&& cd /tmp/gnucash.git \
 	&& apt-get -y install cmake build-essential \
 	&& apt-get -y install pkg-config libgtk2.0-dev libxslt1-dev libxml2-dev libwebkit2gtk-4.0-dev \
