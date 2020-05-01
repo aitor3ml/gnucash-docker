@@ -9,7 +9,7 @@ ENV LANG es_ES.UTF-8
 ENV LANGUAGE es_ES:es
 ENV LC_ALL es_ES.UTF-8
 
-ENV GNUCASH_VERSION 3.9
+ENV GNUCASH_VERSION 3.10
 
 RUN printf "deb http://deb.debian.org/debian stretch main" >> /etc/apt/sources.list.d/backports.list \
 	printf "deb http://security.debian.org/debian-security stretch/updates main" >> /etc/apt/sources.list.d/backports.list \
