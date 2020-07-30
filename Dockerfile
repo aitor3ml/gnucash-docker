@@ -30,7 +30,7 @@ RUN printf "deb http://deb.debian.org/debian stretch main" >> /etc/apt/sources.l
 		libboost-all-dev=1.62.0.1 \
 		libsecret-1-dev \
 	&& apt-get install -y libfinance-quote-perl libfinance-quotehist-perl \
-		ofx aqbanking-tools \
+		ofx aqbanking-tools libboost-program-options1.67.0 \
 	&& cmake -D CMAKE_INSTALL_PREFIX=/gnucash /tmp/gnucash.git \
 	&& cd /tmp/gnucash.git && make && make install && cd / \
 	&& apt-get -y --purge remove git cmake build-essential \
