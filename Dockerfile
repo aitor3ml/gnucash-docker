@@ -43,6 +43,7 @@ RUN printf "deb http://deb.debian.org/debian stretch main" >> /etc/apt/sources.l
                 libsecret-1-dev \
 	&& apt-get -y install guile-2.2 libgtk-3-0 libwebkit2gtk-4.0-37 libboost-locale1.67.0 libboost-filesystem1.67.0 libboost-date-time1.67.0 libboost-regex1.67.0 \
 		libdbd-mysql libdbd-pgsql libdbd-sqlite libdbd-sqlite3 dbus-x11 \
+	&& apt-get -y install libcanberra-gtk-module libcanberra-gtk3-module \
 	&& apt-get -y autoremove && apt-get clean \
 	&& rm -r /tmp/gnucash.git
 
