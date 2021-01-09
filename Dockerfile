@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:buster-slim
 
 MAINTAINER aitor3ml <aitor3ml@gmail.com>
 
